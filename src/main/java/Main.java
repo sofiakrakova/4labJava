@@ -37,9 +37,7 @@ public class Main {
             {
                 System.out.println("id = "+ temp.getId() + ", lastName=" + temp.getLastName() + ", gender=" + temp.getGender() + ", birthday=" + temp.getBirthday() + ", department=" + temp.getDepartment().getName()  + ", salary= " + temp.getSalary());
             }
-            for(Department tmp: departments){
-                System.out.println(tmp.getName());
-            }
+            
         }
         catch (Exception e) {
             System.out.println(e);
