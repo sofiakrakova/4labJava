@@ -25,19 +25,21 @@ public class Main {
             while ((nextLine = reader.readNext()) != null)
             {
                 if (nextLine != null) {
-                    nextLine = nextLine[0].split(separator);
-                    if (nextLine.length > 2)
+                    String nextLine1 = "";
+                    for (int i = 0; i < nextLine.length; i++)
                     {
-                        Person temp = new Person(Long.parseLong(nextLine[ 0 ]), nextLine[ 1 ], nextLine[ 2 ], nextLine[ 3 ], Double.parseDouble(nextLine[ 5 ]), founder(nextLine[4],departments));
-                        persons.add(temp);
+                        nextLine1+=nextLine[i];
                     }
+                    nextLine = nextLine1.split(separator);
+                    Person temp = new Person(Long.parseLong(nextLine[ 0 ]), nextLine[ 1 ], nextLine[ 2 ], nextLine[ 3 ], Double.parseDouble(nextLine[ 5 ]), founder(nextLine[4],departments));
+                    persons.add(temp);
                 }
             }
             for (Person temp: persons)
             {
                 System.out.println("id = "+ temp.getId() + ", lastName=" + temp.getLastName() + ", gender=" + temp.getGender() + ", birthday=" + temp.getBirthday() + ", department=" + temp.getDepartment().getName()  + ", salary= " + temp.getSalary());
             }
-            
+            System.out.println(persons.size());
         }
         catch (Exception e) {
             System.out.println(e);
